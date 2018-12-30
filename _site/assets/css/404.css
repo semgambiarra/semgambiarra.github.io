@@ -1,0 +1,159 @@
+/* Reset and preset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+::selection {
+  background: #caff84;
+  color:#000;
+}
+
+@font-face {
+  font-family: 'logo';
+    src: url('../fonts/atari1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/VT323.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* Default elements */
+html, body { height: 100%; }
+
+body {
+  font:18px/1 'Vollkorn', serif;
+	/*font:18px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	color: #666;
+	background-color: #111;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+
+h1 {
+  font-family: "VT323";
+  text-transform: uppercase;
+  font-size: 64px;
+  padding: 16px;
+  color: #fff;
+}
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color: #eee;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper {
+  position: absolute;
+  max-width: 900px;
+  margin: 0 auto;
+  /*text-align: center;*/
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.message {
+  position: relative;
+  margin-top: 100px;
+  min-height: 300px;
+  text-align: center;
+  z-index: 999;
+  background: transparent;
+}
+
+#page-header {
+  width: 900px;
+  height: 381px;
+  overflow: hidden;
+}
+
+#page-header pre {
+  white-space: pre-wrap;
+  padding: 20px;
+  font-family: 'Source Code Pro',Menlo,monospace;
+  height: 381px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#auto-code {
+  color: #9BD22D;
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  overflow: hidden;
+  max-width: 900px;
+  z-index: -1;
+}
+
+.over {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 310px;
+  /*background: red;*/
+  height: 100%;
+}
+
+.logo {
+  font-size: 64px;
+  font-family: 'logo' !important;
+}
+
+.name {
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+.box {
+  padding: 16px 7px 16px 11px;
+  border: 1px solid #bbb;
+}
+
+.glitch {
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.glitch:after {
+  animation: glitch-animation 2s linear alternate-reverse infinite;
+  clip: rect( 0, 900px, 0, 0 );
+  background: #111;
+  content: attr( data-text );
+  position: absolute;
+  right: -2px;
+  overflow: hidden;
+  text-shadow: -2px 0 #d22d5c;
+}
+
+.glitch:before {
+  animation: glitch-animation 3s linear alternate-reverse infinite;
+  clip: rect( 0, 900px, 0, 0 );
+  background: #111;
+  content: attr( data-text );
+  left: -2px;
+  overflow: hidden;
+  position: absolute;
+  text-shadow: 2px 0 #642dd2;
+}
+
+@keyframes glitch-animation {
+  80% { clip: rect(52px, 9999px, 14px, 0); }
+  90% {clip: rect(38px, 9999px, 62px, 0); }
+}

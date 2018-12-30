@@ -1,0 +1,50 @@
+first_name: "Sem"
+last_name: "Gambiarra"
+description: "Da ciência a engenharia, da eletrônica a robótica, do hardware ao software"
+keywords: "Engenharia, engenharia, Elétrica, eletrica, Eletrônica, eletrônica, Eletronica, eletronica, Arduino, arduino, Raspberry Pi, Raspberry, raspberry pi, raspberry, pic, PIC, Microcontroladores, microcontroladores, Controladores, controladores, Microprocessadores, microprocessadores, Processadores, processadores, Robótica, robótica, robotica, Automação, automação, automacao, Programação, programação, programacao, Inteligência Artifícial, inteligencia artificial, inteligência artifícial, C, C++, c, c++, python, Python, Faça você mesmo, faça você mesmo, faca voce mesmo, DIY, diy"
+highlighter: rouge
+markdown: kramdown
+
+paginate: 5
+baseurl:
+domain_name: 'https://semgambiarra.com.br'
+url: 'https://semgambiarra.github.io'
+disqus: true
+disqus_shortname: 'sem-gambiarra'
+google_analytics: 'UA-122322529-1'
+facebook: semgambiarra
+twitter: semgambiarra
+github: semgambiarra
+plugins: [jekyll-paginate, jekyll-sitemap]
+
+authors:
+    lucas:
+        name: Lucas Mazzetto
+        ocupation: Estudante de Engenharia Elétrica
+        about: Entusiasta de tecnologia, apaixonado por ciência, computadores, máquinas e robôs.
+        avatar: lucas
+        twitter: lucmazz
+        github: lucasmazzetto
+        site:
+
+permalink: /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post

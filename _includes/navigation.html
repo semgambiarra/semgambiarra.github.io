@@ -1,0 +1,22 @@
+<nav class="main-nav {% if page.cover %}article-nav{% else %}home-nav{% endif %}">
+  <div class="clearfix">
+
+    {% if page.cover %}
+    <div class="left">
+          <a href="{{ site.baseurl }}/" class="logo box">S</a>
+    </div>
+    {% endif %}
+
+    <div class="right">
+      {% if page.url != "/" %}
+        <a href="{{ site.baseurl }}/"> <span class="arrow">←</span> Início </a>
+      {% endif %}
+
+      {% if page.url != "/about/" %}
+        <a href="{{ site.baseurl }}/about">Sobre </a>
+      {% endif %}
+
+      <a href="{{ site.baseurl }}/feed.xml" target="_blank"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,28 @@
+<header>
+{% include navigation.html %}
+
+{% if page.cover %}
+  <div id="page-header" class="post-header">
+    <div class="cover" style="background-image: url({{ site.baseurl }}/assets/images/posts/{{page.date | date: '%Y'}}/{{ page.cover }}.jpg)">
+    </div>
+  </div>
+{% else %}
+<div id="page-header" class="default-header">
+  <pre>
+    <code id="auto-code" class="language-c hljs cpp wrapper" data-lang="c"></code>
+  </pre>
+
+  <div id="site-logo">
+    <h1 class="name logo">
+      <a href="{{ site.baseurl }}/">
+        
+        <span class="glitch" data-text="{{ site.first_name }}">{{ site.first_name }}</span>
+        <br>
+        <span class="glitch" data-text="{{ site.last_name }}">{{ site.last_name }}</span>
+        
+      </a>
+    </h1>
+  </div>
+</div>
+{% endif %}
+</header>

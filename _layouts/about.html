@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post about">
+    <h1>Sobre</h1>
+      
+    <section id="about-body">
+        {{ content }}
+    </section>
+
+    <section>
+        <h2>Autores:</h2>
+
+        {% for a in site.authors %}
+        {% for author in a %}
+        {% if author.name %}
+
+        {% assign id = a[0] %}
+
+        {% include author.html id=id author=author %}
+
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </section>
+
+
+</article>
+
+
+
+

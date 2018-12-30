@@ -1,0 +1,41 @@
+<aside id="{{id}}" class="profile-card clearfix">
+  <header>
+    <a href="#{{id}}">
+        <img class="avatar" src="{{ site.baseurl }}/assets/images/{{author.avatar}}.jpg" alt="imagem de {{author.name}}">
+    </a>
+
+    <h1>{{ author.name }}</h1>
+    <h2>{{ author.ocupation }}</h2>
+  </header>
+
+  <div class="profile-bio">
+    <p>{{ author.about }}</p>
+  </div>
+
+  <ul class="profile-social-links">
+    {% if author.site %}
+    <li>
+        <a href="{{ author.site }}" target="_blank" class="site">
+            <i class="fa fa-globe"></i>
+        </a>
+    </li>
+    {% endif %}
+
+    {% if author.github %}
+    <li>
+        <a href="http://github.com/{{ author.github }}" target="_blank" class="github">
+            <i class="fa fa-github"></i>
+        </a>
+    </li>
+    {% endif %}
+
+    {% if author.twitter %}
+    <li>
+        <a href="http://twitter.com/{{ author.twitter }}" target="_blank" class="twitter">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </li>
+    {% endif %}
+  </ul>
+</aside>
+

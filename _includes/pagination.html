@@ -1,0 +1,24 @@
+<nav id="post-nav">
+    {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+            <a href="{{ site.baseurl }}/">
+                <span class="prev">
+                    <span class="arrow">←</span> Mais recentes
+                </span>
+            </a>
+            {% else %}
+            <a href="{{ site.baseurl }}/page{{ paginator.previous_page }}/">
+                <span class="prev">
+                    <span class="arrow">←</span> Mais recentes
+                </span>
+            </a>
+            {% endif %}
+    {% endif %}
+    {% if paginator.next_page %}
+        <a href="{{ site.baseurl }}/page{{ paginator.next_page }}/">
+            <span class="next">
+                Mais antigos <span class="arrow">→</span>
+            </span>
+        </a>
+    {% endif %}
+</nav>

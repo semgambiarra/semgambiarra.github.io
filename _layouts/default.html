@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="INDEX, FOLLOW" name="ROBOTS">
+  <meta name="twitter:site" content="@semgambiarra">
+
+  {% if page.cover %}
+    <meta name="keywords" content="{{ page.keywords }}">
+    <meta name="description" content="{{ page.description }}">
+
+    <meta property="og:description" content="{{ page.description }}"/>
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/posts/{{page.date | date: '%Y'}}/{{ page.cover }}.jpg"/>
+    <meta property="og:type" content="article">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="320">
+
+    <meta property="article:author" content="{{ site.authors[page.author].name }}">
+    <meta property="article:section" content="Tecnologia">
+    <meta property="article:tag" content="{{ page.keywords }}">
+    <meta property="article:published_time" content="{{ page.date }}">
+
+    <meta name="twitter:creator" content="{{ site.authors[page.author].twitter }}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/posts/{{page.date | date: '%Y'}}/{{ page.cover }}.jpg">
+  {% else %}
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ site.description }}"/>
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/pattern.jpg"/>
+    <meta property="og:image:width" content="341">
+    <meta property="og:image:height" content="256">
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url }}">
+    <meta name="twitter:title" content="{{ site.first_name }} {{ site.last_name }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/pattern.jpg">
+  {% endif %}
+
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:site_name" content="Sem Gambiarra">
+  <meta property="og:title" content="{{ page.title }}"/>
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>{{ site.first_name }} {{ site.last_name }} — {% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}</title>
+
+  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="semgambiarra" href="{{ site.baseurl }}/rss.xml">
+
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/highlight.css">
+</head>
+<body>
+
+  {% include header.html %}
+  <main>
+    <section class="wrapper" class="{% if page.cover != true %}home{% endif %}">
+      {{ content }}
+    </section>
+  </main>
+  {% include footer.html %}
+
+  <script src="{{ site.baseurl }}/assets/js/vendor/jquery.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/vendor/jquery.timeago.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/vendor/highlight.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+  {% if page.cover != true %}
+    <script src="{{ site.baseurl }}/assets/js/autocode.js"></script>
+  {% endif %}
+
+  <script type="text/javascript">
+    // highlight code
+    hljs.initHighlightingOnLoad();
+
+    // data-text to glitch
+    $(function(){
+      $("#post-list a").each(function(index, el) {
+        var $el = $(el)
+        var text = $el.text().trim();
+        $el.attr("data-text", text);
+      });
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122322529-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+</body>
+</html>
